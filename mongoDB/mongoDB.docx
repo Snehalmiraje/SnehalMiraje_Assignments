@@ -1,0 +1,1209 @@
+MongoDB
+
+C:\Users\SMIRAJE>mongo "mongodb+srv://cluster0.seo9v.mongodb.net/myFirstDatabase" --username snehal
+MongoDB shell version v4.4.6
+Enter password:
+connecting to: mongodb://cluster0-shard-00-01.seo9v.mongodb.net:27017,cluster0-shard-00-02.seo9v.mongodb.net:27017,cluster0-shard-00-00.seo9v.mongodb.net:27017/myFirstDatabase?authSource=admin&compressors=disabled&gssapiServiceName=mongodb&replicaSet=atlas-120tiv-shard-0&ssl=true
+
+
+*** You have failed to connect to a MongoDB Atlas cluster. Please ensure that your IP whitelist allows connections from your network.
+
+Error: can't connect to new replica set master [cluster0-shard-00-02.seo9v.mongodb.net:27017], err: AuthenticationFailed: bad auth : Authentication failed. :
+connect@src/mongo/shell/mongo.js:374:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+C:\Users\SMIRAJE>mongo "mongodb+srv://cluster0.seo9v.mongodb.net/myFirstDatabase" --username snehal
+MongoDB shell version v4.4.6
+Enter password:
+connecting to: mongodb://cluster0-shard-00-01.seo9v.mongodb.net:27017,cluster0-shard-00-02.seo9v.mongodb.net:27017,cluster0-shard-00-00.seo9v.mongodb.net:27017/myFirstDatabase?authSource=admin&compressors=disabled&gssapiServiceName=mongodb&replicaSet=atlas-120tiv-shard-0&ssl=true
+
+
+*** You have failed to connect to a MongoDB Atlas cluster. Please ensure that your IP whitelist allows connections from your network.
+
+Error: can't connect to new replica set master [cluster0-shard-00-02.seo9v.mongodb.net:27017], err: AuthenticationFailed: bad auth : Authentication failed. :
+connect@src/mongo/shell/mongo.js:374:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+C:\Users\SMIRAJE>ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : corp.capgemini.com
+
+Ethernet adapter Ethernet 3:
+
+   Connection-specific DNS Suffix  . :
+   IPv4 Address. . . . . . . . . . . : 192.168.42.237
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.42.129
+
+C:\Users\SMIRAJE>mongo "mongodb+srv://cluster0.seo9v.mongodb.net/myFirstDatabase" --username snehal
+MongoDB shell version v4.4.6
+Enter password:
+connecting to: mongodb://cluster0-shard-00-02.seo9v.mongodb.net:27017,cluster0-shard-00-00.seo9v.mongodb.net:27017,cluster0-shard-00-01.seo9v.mongodb.net:27017/myFirstDatabase?authSource=admin&compressors=disabled&gssapiServiceName=mongodb&replicaSet=atlas-120tiv-shard-0&ssl=true
+
+
+*** You have failed to connect to a MongoDB Atlas cluster. Please ensure that your IP whitelist allows connections from your network.
+
+Error: can't connect to new replica set master [cluster0-shard-00-02.seo9v.mongodb.net:27017], err: AuthenticationFailed: bad auth : Authentication failed. :
+connect@src/mongo/shell/mongo.js:374:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+C:\Users\SMIRAJE>mongo "mongodb+srv://cluster0.seo9v.mongodb.net/myFirstDatabase" --username snehal
+MongoDB shell version v4.4.6
+Enter password:
+connecting to: mongodb://cluster0-shard-00-00.seo9v.mongodb.net:27017,cluster0-shard-00-01.seo9v.mongodb.net:27017,cluster0-shard-00-02.seo9v.mongodb.net:27017/myFirstDatabase?authSource=admin&compressors=disabled&gssapiServiceName=mongodb&replicaSet=atlas-120tiv-shard-0&ssl=true
+Implicit session: session { "id" : UUID("ed45dc8b-eb4f-4692-8a33-fd39dd88ab64") }
+MongoDB server version: 4.4.6
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+        https://community.mongodb.com
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show dbs
+admin  0.000GB
+local  9.445GB
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use first-db
+switched to db first-db
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show dbs
+admin  0.000GB
+local  9.445GB
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use first-db
+switched to db first-db
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.
+... users
+first-db.users
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.insertOne({name:'snehal',age:22})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e559ac3b1ad18656b38154")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show dbs
+admin     0.000GB
+first-db  0.000GB
+local     9.445GB
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find()
+{ "_id" : ObjectId("60e559ac3b1ad18656b38154"), "name" : "snehal", "age" : 22 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.insertMany([{name:'sachin',age:18},{name:'sneha',age:22}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("60e55a813b1ad18656b38155"),
+                ObjectId("60e55a813b1ad18656b38156")
+        ]
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.find()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find()
+{ "_id" : ObjectId("60e559ac3b1ad18656b38154"), "name" : "snehal", "age" : 22 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38155"), "name" : "sachin", "age" : 18 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38156"), "name" : "sneha", "age" : 22 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find({age:22})
+{ "_id" : ObjectId("60e559ac3b1ad18656b38154"), "name" : "snehal", "age" : 22 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38156"), "name" : "sneha", "age" : 22 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find({age:{$gt:20}})
+{ "_id" : ObjectId("60e559ac3b1ad18656b38154"), "name" : "snehal", "age" : 22 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38156"), "name" : "sneha", "age" : 22 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find({age:{$gt:18}})
+{ "_id" : ObjectId("60e559ac3b1ad18656b38154"), "name" : "snehal", "age" : 22 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38156"), "name" : "sneha", "age" : 22 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find({age:{$gt:17}})
+{ "_id" : ObjectId("60e559ac3b1ad18656b38154"), "name" : "snehal", "age" : 22 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38155"), "name" : "sachin", "age" : 18 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38156"), "name" : "sneha", "age" : 22 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.insertOne({name:'alisa',age:34,address:{street:'first', city:'ichal'}})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e55b953b1ad18656b38157")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find()
+{ "_id" : ObjectId("60e559ac3b1ad18656b38154"), "name" : "snehal", "age" : 22 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38155"), "name" : "sachin", "age" : 18 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38156"), "name" : "sneha", "age" : 22 }
+{ "_id" : ObjectId("60e55b953b1ad18656b38157"), "name" : "alisa", "age" : 34, "address" : { "street" : "first", "city" : "ichal" } }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find({"address.street":first})
+uncaught exception: ReferenceError: first is not defined :
+@(shell):1:16
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find({"address.street":'first'})
+{ "_id" : ObjectId("60e55b953b1ad18656b38157"), "name" : "alisa", "age" : 34, "address" : { "street" : "first", "city" : "ichal" } }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find({"address.street":'first'})
+{ "_id" : ObjectId("60e55b953b1ad18656b38157"), "name" : "alisa", "age" : 34, "address" : { "street" : "first", "city" : "ichal" } }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.update({name:'snehal'},{$set:{age:66}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find()
+{ "_id" : ObjectId("60e559ac3b1ad18656b38154"), "name" : "snehal", "age" : 66 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38155"), "name" : "sachin", "age" : 18 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38156"), "name" : "sneha", "age" : 22 }
+{ "_id" : ObjectId("60e55b953b1ad18656b38157"), "name" : "alisa", "age" : 34, "address" : { "street" : "first", "city" : "ichal" } }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.deleteOne({name:'sneha'})
+{ "acknowledged" : true, "deletedCount" : 1 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find()
+{ "_id" : ObjectId("60e559ac3b1ad18656b38154"), "name" : "snehal", "age" : 66 }
+{ "_id" : ObjectId("60e55a813b1ad18656b38155"), "name" : "sachin", "age" : 18 }
+{ "_id" : ObjectId("60e55b953b1ad18656b38157"), "name" : "alisa", "age" : 34, "address" : { "street" : "first", "city" : "ichal" } }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collectios
+uncaught exception: Error: don't know how to show [collectios] :
+shellHelper.show@src/mongo/shell/utils.js:1191:11
+shellHelper@src/mongo/shell/utils.js:819:15
+@(shellhelp2):1:1
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use first-db
+switched to db first-db
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collectios
+uncaught exception: Error: don't know how to show [collectios] :
+shellHelper.show@src/mongo/shell/utils.js:1191:11
+shellHelper@src/mongo/shell/utils.js:819:15
+@(shellhelp2):1:1
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+users
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.createCollection('movies')
+{
+        "ok" : 1,
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625649654, 9),
+                "signature" : {
+                        "hash" : BinData(0,"KpnhQK9TNjC6YM8hpjiZqMjX3iw="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        },
+        "operationTime" : Timestamp(1625649654, 9)
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'Fight Club',writer:'chuck palahniuko',year:1999, actors:["brad pitt","edward norton"]})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e573cf3b1ad18656b38158")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'pulp fiction',writer:'quentian',year:1994, actors:["john","uma"]})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e575253b1ad18656b38159")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'inglorious',writer:'quentian',year:2009, actors:["brad","diane","eli"]})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e575a13b1ad18656b3815a")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'the hobbit:an unexpected journey',writer:'j.r.r tolkein',year:2012, franchise:'the hobbit'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e576283b1ad18656b3815b")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'the hobbit:the desoaltion of smaug',writer:'j.r.r tolkein'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e5766f3b1ad18656b3815c")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e5766f3b1ad18656b3815c"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.remove({title:"the hobbit:the desoaltion of smaug"})
+WriteResult({ "nRemoved" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'the hobbit:the desoaltion of smaug',writer:'j.r.r tolkein', year:2013,franchise:'the hobbit'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e5779e3b1ad18656b3815d")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'the hobbit:the battle of the five armies',writer:'j.r.r tolkein', year:2012,franchise:'the hobbit',synopsis:'bilbo and company are forced to enage in a war.'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e578013b1ad18656b3815e")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'pee wee herman's big adventure})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:43
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'pee wee herman's big adventure'})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:43
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'avatar'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e578403b1ad18656b3815f")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+{ "_id" : ObjectId("60e578403b1ad18656b3815f"), "title" : "avatar" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:'pee wee herman's big adventure'})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:43
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.insertOne({title:"pee wee herman's big adventure"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e5788a3b1ad18656b38160")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+{ "_id" : ObjectId("60e578403b1ad18656b3815f"), "title" : "avatar" }
+{ "_id" : ObjectId("60e5788a3b1ad18656b38160"), "title" : "pee wee herman's big adventure" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+{ "_id" : ObjectId("60e578403b1ad18656b3815f"), "title" : "avatar" }
+{ "_id" : ObjectId("60e5788a3b1ad18656b38160"), "title" : "pee wee herman's big adventure" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({writer:"quentin"})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({writer:"quentain"})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({writer:"quentian"})
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor:'brad'})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor:['brad']})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor:{['brad']}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:31
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor:"brad"})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor:["brad"]})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor:{$elemMatch:{'brad'}}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:41
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor:{$elemMatch:{actor:'brad'}}})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor: {$elemMatch: {actor:"brad"}}})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor: {$elemFind: {actor:"brad"}}})
+Error: error: {
+        "operationTime" : Timestamp(1625652235, 2),
+        "ok" : 0,
+        "errmsg" : "unknown operator: $elemFind",
+        "code" : 2,
+        "codeName" : "BadValue",
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625652235, 2),
+                "signature" : {
+                        "hash" : BinData(0,"D2BVi4ofgwpgy1SIP/6Ue54ibYQ="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        }
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor: {$elemIn: {actor:"brad"}}})
+Error: error: {
+        "operationTime" : Timestamp(1625652248, 25),
+        "ok" : 0,
+        "errmsg" : "unknown operator: $elemIn",
+        "code" : 2,
+        "codeName" : "BadValue",
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625652248, 25),
+                "signature" : {
+                        "hash" : BinData(0,"ZjhasV7+hL80xIyLQWQQzVsbrjw="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        }
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor: {$In: {actor:"brad"}}})
+Error: error: {
+        "operationTime" : Timestamp(1625652276, 9),
+        "ok" : 0,
+        "errmsg" : "unknown operator: $In",
+        "code" : 2,
+        "codeName" : "BadValue",
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625652276, 9),
+                "signature" : {
+                        "hash" : BinData(0,"1FnTTxxnWHMytQAGz3OcTaylXNM="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        }
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor: {$In: ["brad"]}})
+Error: error: {
+        "operationTime" : Timestamp(1625652350, 7),
+        "ok" : 0,
+        "errmsg" : "unknown operator: $In",
+        "code" : 2,
+        "codeName" : "BadValue",
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625652350, 7),
+                "signature" : {
+                        "hash" : BinData(0,"uCmomjbv8Ky5E3kQrkFJ8fK9hSQ="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        }
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor: {$in: ["brad"]}})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor: {$in: [brad]}})
+uncaught exception: ReferenceError: brad is not defined :
+@(shell):1:31
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actor: {$in: ["brad"]}})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+{ "_id" : ObjectId("60e578403b1ad18656b3815f"), "title" : "avatar" }
+{ "_id" : ObjectId("60e5788a3b1ad18656b38160"), "title" : "pee wee herman's big adventure" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({actors: {$in: ["brad"]}})
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({franchise:"the hobbit"})
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({year:{$gt:1899,$lt:2000 }})
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({year:{$lt:2010,$lt:2000 }})
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({year:{$lt:2010 or $lt:2000 }})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:31
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({year:{$lt:2010, $lt:2000 }})
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({year:{$lt:2010 }})
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({year:{$gt:2010,$lt:2000 }})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({year:{$gt:2010}{year:{$lt:2000} }})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:31
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({year:{$gt:2010}{year:{$lt:2000} }}})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:31
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({$or[{year:{$gt:2010},{year:{$lt:2000} }]})
+... db.movies.find({year:{$gt:2010}{year:{$lt:2000} }}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:19
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({$or: [{year:{$lt:2000}},{year:{$gt:2010}}]  })
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "title" : "the hobbit:an unexpected journey", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY>
+
+
+Updating part:
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.update({title:'the hobbit:an unexpected journey'},{synopsis:'updated'})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ] }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "synopsis" : "updated" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+{ "_id" : ObjectId("60e578403b1ad18656b3815f"), "title" : "avatar" }
+{ "_id" : ObjectId("60e5788a3b1ad18656b38160"), "title" : "pee wee herman's big adventure" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.update({title:'the hobbit:the desolation of smaug'},{$set:{synopsis:'updated'}})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.update({title:'the hobbit:the desoaltion of smaug'},{$set:{synopsis:'updated'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.update({title:'pulp fiction'},{$set:{acotrs:'samuel l.jackson'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma" ], "acotrs" : "samuel l.jackson" }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "synopsis" : "updated" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit", "synopsis" : "updated" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+{ "_id" : ObjectId("60e578403b1ad18656b3815f"), "title" : "avatar" }
+{ "_id" : ObjectId("60e5788a3b1ad18656b38160"), "title" : "pee wee herman's big adventure" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.update({title:'pulp fiction'},{$push:{actors:'samuel l.jackson'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma", "samuel l.jackson" ], "acotrs" : "samuel l.jackson" }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "synopsis" : "updated" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit", "synopsis" : "updated" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+{ "_id" : ObjectId("60e578403b1ad18656b3815f"), "title" : "avatar" }
+{ "_id" : ObjectId("60e5788a3b1ad18656b38160"), "title" : "pee wee herman's big adventure" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY>
+
+
+
+
+
+
+Searching text and deleting documents:
+
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({synopsis: {$regex:"bilbo"}}).pretty()
+{
+        "_id" : ObjectId("60e578013b1ad18656b3815e"),
+        "title" : "the hobbit:the battle of the five armies",
+        "writer" : "j.r.r tolkein",
+        "year" : 2012,
+        "franchise" : "the hobbit",
+        "synopsis" : "bilbo and company are forced to enage in a war."
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({synopsis: {$regex:"updated"}}).pretty()
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "synopsis" : "updated" }
+{
+        "_id" : ObjectId("60e5779e3b1ad18656b3815d"),
+        "title" : "the hobbit:the desoaltion of smaug",
+        "writer" : "j.r.r tolkein",
+        "year" : 2013,
+        "franchise" : "the hobbit",
+        "synopsis" : "updated"
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma", "samuel l.jackson" ], "acotrs" : "samuel l.jackson" }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "synopsis" : "updated" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit", "synopsis" : "updated" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+{ "_id" : ObjectId("60e578403b1ad18656b3815f"), "title" : "avatar" }
+{ "_id" : ObjectId("60e5788a3b1ad18656b38160"), "title" : "pee wee herman's big adventure" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find($and[{synopsis: {$regex:"bilbo"}},{synopsis:{$not:{$regex:"updated"}}}]).pretty()
+uncaught exception: ReferenceError: $and is not defined :
+@(shell):1:1
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find($and:[{synopsis: {$regex:"bilbo"}},{synopsis:{$not:{$regex:"updated"}}}]).pretty()
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:19
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({$and:[{synopsis: {$regex:"bilbo"}},{synopsis:{$not:{$regex:"updated"}}}]}).pretty()
+{
+        "_id" : ObjectId("60e578013b1ad18656b3815e"),
+        "title" : "the hobbit:the battle of the five armies",
+        "writer" : "j.r.r tolkein",
+        "year" : 2012,
+        "franchise" : "the hobbit",
+        "synopsis" : "bilbo and company are forced to enage in a war."
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({$or:[{synopsis: {$regex:"bilbo"}},{synopsis:{$regex:"updated"}}]}).pretty()
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "synopsis" : "updated" }
+{
+        "_id" : ObjectId("60e5779e3b1ad18656b3815d"),
+        "title" : "the hobbit:the desoaltion of smaug",
+        "writer" : "j.r.r tolkein",
+        "year" : 2013,
+        "franchise" : "the hobbit",
+        "synopsis" : "updated"
+}
+{
+        "_id" : ObjectId("60e578013b1ad18656b3815e"),
+        "title" : "the hobbit:the battle of the five armies",
+        "writer" : "j.r.r tolkein",
+        "year" : 2012,
+        "franchise" : "the hobbit",
+        "synopsis" : "bilbo and company are forced to enage in a war."
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({$and:[{synopsis: {$regex:"bilbo"}},{synopsis:{$regex:"updated"}}]}).pretty()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find({$and:[{synopsis: {$regex:"bilbo"}},{synopsis:{$regex:"forced"}}]}).pretty()
+{
+        "_id" : ObjectId("60e578013b1ad18656b3815e"),
+        "title" : "the hobbit:the battle of the five armies",
+        "writer" : "j.r.r tolkein",
+        "year" : 2012,
+        "franchise" : "the hobbit",
+        "synopsis" : "bilbo and company are forced to enage in a war."
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.remove({title:"pee wee herman's big adventure"})
+WriteResult({ "nRemoved" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma", "samuel l.jackson" ], "acotrs" : "samuel l.jackson" }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "synopsis" : "updated" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit", "synopsis" : "updated" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+{ "_id" : ObjectId("60e578403b1ad18656b3815f"), "title" : "avatar" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.remove({title:"avatar"})
+WriteResult({ "nRemoved" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.movies.find()
+{ "_id" : ObjectId("60e573cf3b1ad18656b38158"), "title" : "Fight Club", "writer" : "chuck palahniuko", "year" : 1999, "actors" : [ "brad pitt", "edward norton" ] }
+{ "_id" : ObjectId("60e575253b1ad18656b38159"), "title" : "pulp fiction", "writer" : "quentian", "year" : 1994, "actors" : [ "john", "uma", "samuel l.jackson" ], "acotrs" : "samuel l.jackson" }
+{ "_id" : ObjectId("60e575a13b1ad18656b3815a"), "title" : "inglorious", "writer" : "quentian", "year" : 2009, "actors" : [ "brad", "diane", "eli" ] }
+{ "_id" : ObjectId("60e576283b1ad18656b3815b"), "synopsis" : "updated" }
+{ "_id" : ObjectId("60e5779e3b1ad18656b3815d"), "title" : "the hobbit:the desoaltion of smaug", "writer" : "j.r.r tolkein", "year" : 2013, "franchise" : "the hobbit", "synopsis" : "updated" }
+{ "_id" : ObjectId("60e578013b1ad18656b3815e"), "title" : "the hobbit:the battle of the five armies", "writer" : "j.r.r tolkein", "year" : 2012, "franchise" : "the hobbit", "synopsis" : "bilbo and company are forced to enage in a war." }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY>
+
+
+
+Relationships:
+C:\Users\SMIRAJE>mongo "mongodb+srv://cluster0.seo9v.mongodb.net/myFirstDatabase" --username snehal
+MongoDB shell version v4.4.6
+Enter password:
+connecting to: mongodb://cluster0-shard-00-01.seo9v.mongodb.net:27017,cluster0-shard-00-02.seo9v.mongodb.net:27017,cluster0-shard-00-00.seo9v.mongodb.net:27017/myFirstDatabase?authSource=admin&compressors=disabled&gssapiServiceName=mongodb&replicaSet=atlas-120tiv-shard-0&ssl=true
+Implicit session: session { "id" : UUID("99b483a1-868f-4bfa-8877-d1952740da0b") }
+MongoDB server version: 4.4.6
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collection
+uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1191:11
+shellHelper@src/mongo/shell/utils.js:819:15
+@(shellhelp2):1:1
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_project
+switched to db mongo_project
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show dbs
+admin           0.000GB
+first-db        0.000GB
+local           9.445GB
+mongo_practice  0.000GB
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+movies
+user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use user
+switched to db user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.insertOne({username:"goodguygreg",first_name:"good guy",lastname:"greg"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e591722f19e31e1b36bb8e")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.insertOne({username:"scumbagsteve",full_name:{first:"scumbag",last:"steve"}})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e591f72f19e31e1b36bb8f")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.find()
+{ "_id" : ObjectId("60e591722f19e31e1b36bb8e"), "username" : "goodguygreg", "first_name" : "good guy", "lastname" : "greg" }
+{ "_id" : ObjectId("60e591f72f19e31e1b36bb8f"), "username" : "scumbagsteve", "full_name" : { "first" : "scumbag", "last" : "steve" } }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.createCollection("posts")
+{
+        "ok" : 1,
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625657890, 6),
+                "signature" : {
+                        "hash" : BinData(0,"+5G3njD4lwxZtQ8VGHoR0IENQoc="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        },
+        "operationTime" : Timestamp(1625657890, 5)
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+posts
+user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use posts
+switched to db posts
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'goodguygreg',title:'passes out at party',body:'wakes up early and cleans house'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e592962f19e31e1b36bb90")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'goodguygreg',title:'steals your identity',body:'raises your credit score'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e592e32f19e31e1b36bb91")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.find()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.posts.find()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.find()
+{ "_id" : ObjectId("60e592962f19e31e1b36bb90"), "username" : "goodguygreg", "title" : "passes out at party", "body" : "wakes up early and cleans house" }
+{ "_id" : ObjectId("60e592e32f19e31e1b36bb91"), "username" : "goodguygreg", "title" : "steals your identity", "body" : "raises your credit score" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+post
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show dbs
+admin           0.000GB
+first-db        0.000GB
+local           9.445GB
+mongo_practice  0.000GB
+user            0.000GB
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use user
+switched to db user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.insertOne({username:"goodguygreg",first_name:"good guy",lastname:"greg"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e593c32f19e31e1b36bb92")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'goodguygreg',title:'steals your identity',body:'raises your credit score'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e593ce2f19e31e1b36bb93")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use user
+switched to db user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show mongo_practice
+uncaught exception: Error: don't know how to show [mongo_practice] :
+shellHelper.show@src/mongo/shell/utils.js:1191:11
+shellHelper@src/mongo/shell/utils.js:819:15
+@(shellhelp2):1:1
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+movies
+user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use user
+switched to db user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.insertOne({username:"goodguygreg",first_name:"good guy",lastname:"greg"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e594bc2f19e31e1b36bb94")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'goodguygreg',title:'passes out at party',body:'wakes up early and cleans house'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e594d42f19e31e1b36bb95")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+movies
+user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use user
+switched to db user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.insertOne({username:"goodguygreg",first_name:"good guy",lastname:"greg"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e5950b2f19e31e1b36bb96")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.insertOne({username:"scumbagsteve",full_name:{first:"scumbag",last:"steve"}})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e595502f19e31e1b36bb97")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.find()
+{ "_id" : ObjectId("60e5950b2f19e31e1b36bb96"), "username" : "goodguygreg", "first_name" : "good guy", "lastname" : "greg" }
+{ "_id" : ObjectId("60e595502f19e31e1b36bb97"), "username" : "scumbagsteve", "full_name" : { "first" : "scumbag", "last" : "steve" } }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.createCollection("post")
+{
+        "ok" : 1,
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625658778, 1),
+                "signature" : {
+                        "hash" : BinData(0,"xwxwG6lxWC6WZtniIckj04NcyIA="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        },
+        "operationTime" : Timestamp(1625658778, 1)
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use post
+switched to db post
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'goodguygreg',title:'passes out at party',body:'wakes up early and cleans house'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e595a82f19e31e1b36bb98")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'goodguygreg',title:'steals your identity',body:'raises your credit score'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e595d02f19e31e1b36bb99")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'scumbegsteve',title:'borrows something',body:'sells it'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e596732f19e31e1b36bb9a")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'goodguygreg',title:'reports bug in your code',body:'sends you pull request'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e5969d2f19e31e1b36bb9b")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'scumbegsteve',title:'borrows something',body:'the end'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e596ac2f19e31e1b36bb9c")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.insertOne({username:'scumbegsteve',title:'forks your repo on github',body:'sets to private'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("60e596d02f19e31e1b36bb9d")
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.createCollection("comments")
+{
+        "ok" : 1,
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625659126, 6),
+                "signature" : {
+                        "hash" : BinData(0,"TFQWOrkdg0lwtJjTWqLYzvsbX90="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        },
+        "operationTime" : Timestamp(1625659126, 6)
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use comments
+switched to db comments
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.comments.insertOne({username:'goodguygreg',comment:'hdb.comments.insertOne({username:'goodguygreg',comment:'hdb.comments.insertOne({username:'goodguygreg',comment:'hdb.comments.insertOne({username:'goodguygreg',comment:'hdb.comments.insertOne({username:'goodguygreg',comment:'hdb.comments.insertOne({username:'goodguygreg',comment:'h^C.comments.insertdb.comments.insertOne({username:'goodguygreg',comment:'hope you got a good deal',post:ObjectId("96")})nts.insertOne({username:'gbyeguygreg',comment:'hope you got a good deal',post:ObjectId("96")})
+
+C:\Users\SMIRAJE>mongo "mongodb+srv://cluster0.seo9v.mongodb.net/myFirstDatabase" --username snehal
+MongoDB shell version v4.4.6
+Enter password:
+connecting to: mongodb://cluster0-shard-00-02.seo9v.mongodb.net:27017,cluster0-shard-00-00.seo9v.mongodb.net:27017,cluster0-shard-00-01.seo9v.mongodb.net:27017/myFirstDatabase?authSource=admin&compressors=disabled&gssapiServiceName=mongodb&replicaSet=atlas-120tiv-shard-0&ssl=true
+{"t":{"$date":"2021-07-07T12:03:50.975Z"},"s":"W",  "c":"NETWORK",  "id":23019,   "ctx":"ReplicaSetMonitor-TaskExecutor","msg":"DNS resolution while connecting to peer was slow","attr":{"peer":"cluster0-shard-00-01.seo9v.mongodb.net:27017","durationMillis":2039}}
+{"t":{"$date":"2021-07-07T12:03:51.361Z"},"s":"W",  "c":"NETWORK",  "id":23019,   "ctx":"ReplicaSetMonitor-TaskExecutor","msg":"DNS resolution while connecting to peer was slow","attr":{"peer":"cluster0-shard-00-00.seo9v.mongodb.net:27017","durationMillis":2425}}
+Implicit session: session { "id" : UUID("10f5aa22-7580-431a-b494-e09aa05593c0") }
+MongoDB server version: 4.4.6
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use comments
+switched to db comments
+
+Microsoft Windows [Version 10.0.19042.508]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\SMIRAJE>mongo "mongodb+srv://cluster0.seo9v.mongodb.net/myFirstDatabase" --username snehal
+MongoDB shell version v4.4.6
+Enter password:
+connecting to: mongodb://cluster0-shard-00-00.seo9v.mongodb.net:27017,cluster0-shard-00-01.seo9v.mongodb.net:27017,cluster0-shard-00-02.seo9v.mongodb.net:27017/myFirstDatabase?authSource=admin&compressors=disabled&gssapiServiceName=mongodb&replicaSet=atlas-120tiv-shard-0&ssl=true
+Implicit session: session { "id" : UUID("ac975d09-9480-49a3-b5a0-231b1dd2c736") }
+MongoDB server version: 4.4.6
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+movies
+user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use user
+switched to db user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+post
+user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.createCollection("comments")
+{
+        "ok" : 1,
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625660047, 1),
+                "signature" : {
+                        "hash" : BinData(0,"fdVo+xT9BLVt7ApRIJnOksTu988="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        },
+        "operationTime" : Timestamp(1625660047, 1)
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show collections
+comments
+post
+user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use comments
+switched to db comments
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.comments.insert({ username:"GoodGuyGreg", comment:"Hope you got a good deal!", post:ObjectId("60e596732f19e31e1b36bb9a")})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.comments.insert({username:"GoodGuyGreg", comment:"What's mine is yours!", post:ObjectId("60e596ac2f19e31e1b36bb9c")})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.comments.insert({username:"GoodGuyGreg", comment:"Don't violate the licensing agreement!", post:ObjectId("60e596d02f19e31e1b36bb9d")})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.comments.insert({username:"ScumbagSteve", comment:"It still isn't clean", post:ObjectId("60e596d02f19e31e1b36bb98")})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.comments.insert({username:"ScumbagSteve", comment:"Denied your PR cause I found a hack", post:ObjectId("60e596ac2f19e31e1b36bb9b")})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.users.find().pretty()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.find().pretty()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use mongo_practice
+switched to db mongo_practice
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.find().pretty()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.find().pretty()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.find().pretty()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.find().pretty()
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use user
+switched to db user
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.user.find().pretty()
+{
+        "_id" : ObjectId("60e5950b2f19e31e1b36bb96"),
+        "username" : "goodguygreg",
+        "first_name" : "good guy",
+        "lastname" : "greg"
+}
+{
+        "_id" : ObjectId("60e595502f19e31e1b36bb97"),
+        "username" : "scumbagsteve",
+        "full_name" : {
+                "first" : "scumbag",
+                "last" : "steve"
+        }
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use post
+switched to db post
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.find().pretty()
+{
+        "_id" : ObjectId("60e595a82f19e31e1b36bb98"),
+        "username" : "goodguygreg",
+        "title" : "passes out at party",
+        "body" : "wakes up early and cleans house"
+}
+{
+        "_id" : ObjectId("60e595d02f19e31e1b36bb99"),
+        "username" : "goodguygreg",
+        "title" : "steals your identity",
+        "body" : "raises your credit score"
+}
+{
+        "_id" : ObjectId("60e596732f19e31e1b36bb9a"),
+        "username" : "scumbegsteve",
+        "title" : "borrows something",
+        "body" : "sells it"
+}
+{
+        "_id" : ObjectId("60e5969d2f19e31e1b36bb9b"),
+        "username" : "goodguygreg",
+        "title" : "reports bug in your code",
+        "body" : "sends you pull request"
+}
+{
+        "_id" : ObjectId("60e596ac2f19e31e1b36bb9c"),
+        "username" : "scumbegsteve",
+        "title" : "borrows everything",
+        "body" : "the end"
+}
+{
+        "_id" : ObjectId("60e596d02f19e31e1b36bb9d"),
+        "username" : "scumbegsteve",
+        "title" : "forks your repo on github",
+        "body" : "sets to private"
+}
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use post
+switched to db post
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.find({username:'goodguygreg'})
+{ "_id" : ObjectId("60e595a82f19e31e1b36bb98"), "username" : "goodguygreg", "title" : "passes out at party", "body" : "wakes up early and cleans house" }
+{ "_id" : ObjectId("60e595d02f19e31e1b36bb99"), "username" : "goodguygreg", "title" : "steals your identity", "body" : "raises your credit score" }
+{ "_id" : ObjectId("60e5969d2f19e31e1b36bb9b"), "username" : "goodguygreg", "title" : "reports bug in your code", "body" : "sends you pull request" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.post.find({username:'scumbagsteve'})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use comments
+switched to db comments
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.comments.find({username:'scumbagsteve'})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.comments.find({username:'goodguygreg'})
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.comments.find()
+{ "_id" : ObjectId("60e59bf134ceb46bb83c99ed"), "username" : "GoodGuyGreg", "comment" : "Hope you got a good deal!", "post" : ObjectId("60e596732f19e31e1b36bb9a") }
+{ "_id" : ObjectId("60e59c9234ceb46bb83c99ee"), "username" : "GoodGuyGreg", "comment" : "What's mine is yours!", "post" : ObjectId("60e596ac2f19e31e1b36bb9c") }
+{ "_id" : ObjectId("60e59cfc34ceb46bb83c99ef"), "username" : "GoodGuyGreg", "comment" : "Don't violate the licensing agreement!", "post" : ObjectId("60e596d02f19e31e1b36bb9d") }
+{ "_id" : ObjectId("60e59d6c34ceb46bb83c99f0"), "username" : "ScumbagSteve", "comment" : "It still isn't clean", "post" : ObjectId("60e596d02f19e31e1b36bb98") }
+{ "_id" : ObjectId("60e59dc834ceb46bb83c99f1"), "username" : "ScumbagSteve", "comment" : "Denied your PR cause I found a hack", "post" : ObjectId("60e596ac2f19e31e1b36bb9b") }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY>
+
+Assignment 2:
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> show dbs
+admin           0.000GB
+comments        0.000GB
+first-db        0.000GB
+local           9.445GB
+mongo_practice  0.000GB
+population      0.003GB
+post            0.000GB
+user            0.000GB
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> use population
+switched to db population
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.find({city:"ATLANTA"})
+{ "_id" : "14808", "city" : "ATLANTA", "loc" : [ -77.480091, 42.556269 ], "pop" : 472, "state" : "NY" }
+{ "_id" : "30303", "city" : "ATLANTA", "loc" : [ -84.388846, 33.752504 ], "pop" : 1845, "state" : "GA" }
+{ "_id" : "30305", "city" : "ATLANTA", "loc" : [ -84.385145, 33.831963 ], "pop" : 19122, "state" : "GA" }
+{ "_id" : "30306", "city" : "ATLANTA", "loc" : [ -84.351418, 33.786027 ], "pop" : 20081, "state" : "GA" }
+{ "_id" : "30307", "city" : "ATLANTA", "loc" : [ -84.335957, 33.769138 ], "pop" : 16330, "state" : "GA" }
+{ "_id" : "30308", "city" : "ATLANTA", "loc" : [ -84.375744, 33.771839 ], "pop" : 8549, "state" : "GA" }
+{ "_id" : "30309", "city" : "ATLANTA", "loc" : [ -84.388338, 33.798407 ], "pop" : 14766, "state" : "GA" }
+{ "_id" : "30310", "city" : "ATLANTA", "loc" : [ -84.423173, 33.727849 ], "pop" : 34017, "state" : "GA" }
+{ "_id" : "30311", "city" : "ATLANTA", "loc" : [ -84.470219, 33.722957 ], "pop" : 34880, "state" : "GA" }
+{ "_id" : "30312", "city" : "ATLANTA", "loc" : [ -84.378125, 33.746749 ], "pop" : 17683, "state" : "GA" }
+{ "_id" : "30313", "city" : "ATLANTA", "loc" : [ -84.39352, 33.76825 ], "pop" : 8038, "state" : "GA" }
+{ "_id" : "30314", "city" : "ATLANTA", "loc" : [ -84.425546, 33.756103 ], "pop" : 26649, "state" : "GA" }
+{ "_id" : "30315", "city" : "ATLANTA", "loc" : [ -84.380771, 33.705062 ], "pop" : 41061, "state" : "GA" }
+{ "_id" : "30316", "city" : "ATLANTA", "loc" : [ -84.333913, 33.721686 ], "pop" : 34668, "state" : "GA" }
+{ "_id" : "30317", "city" : "ATLANTA", "loc" : [ -84.31685, 33.749788 ], "pop" : 16395, "state" : "GA" }
+{ "_id" : "30318", "city" : "ATLANTA", "loc" : [ -84.445432, 33.786454 ], "pop" : 53894, "state" : "GA" }
+{ "_id" : "30319", "city" : "ATLANTA", "loc" : [ -84.335091, 33.868728 ], "pop" : 32138, "state" : "GA" }
+{ "_id" : "30324", "city" : "ATLANTA", "loc" : [ -84.354867, 33.820609 ], "pop" : 15044, "state" : "GA" }
+{ "_id" : "30326", "city" : "ATLANTA", "loc" : [ -84.358232, 33.848168 ], "pop" : 125, "state" : "GA" }
+{ "_id" : "30327", "city" : "ATLANTA", "loc" : [ -84.419966, 33.862723 ], "pop" : 18467, "state" : "GA" }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{ $match: {city:"ATLANTA"}}])
+{ "_id" : "14808", "city" : "ATLANTA", "loc" : [ -77.480091, 42.556269 ], "pop" : 472, "state" : "NY" }
+{ "_id" : "30303", "city" : "ATLANTA", "loc" : [ -84.388846, 33.752504 ], "pop" : 1845, "state" : "GA" }
+{ "_id" : "30305", "city" : "ATLANTA", "loc" : [ -84.385145, 33.831963 ], "pop" : 19122, "state" : "GA" }
+{ "_id" : "30306", "city" : "ATLANTA", "loc" : [ -84.351418, 33.786027 ], "pop" : 20081, "state" : "GA" }
+{ "_id" : "30307", "city" : "ATLANTA", "loc" : [ -84.335957, 33.769138 ], "pop" : 16330, "state" : "GA" }
+{ "_id" : "30308", "city" : "ATLANTA", "loc" : [ -84.375744, 33.771839 ], "pop" : 8549, "state" : "GA" }
+{ "_id" : "30309", "city" : "ATLANTA", "loc" : [ -84.388338, 33.798407 ], "pop" : 14766, "state" : "GA" }
+{ "_id" : "30310", "city" : "ATLANTA", "loc" : [ -84.423173, 33.727849 ], "pop" : 34017, "state" : "GA" }
+{ "_id" : "30311", "city" : "ATLANTA", "loc" : [ -84.470219, 33.722957 ], "pop" : 34880, "state" : "GA" }
+{ "_id" : "30312", "city" : "ATLANTA", "loc" : [ -84.378125, 33.746749 ], "pop" : 17683, "state" : "GA" }
+{ "_id" : "30313", "city" : "ATLANTA", "loc" : [ -84.39352, 33.76825 ], "pop" : 8038, "state" : "GA" }
+{ "_id" : "30314", "city" : "ATLANTA", "loc" : [ -84.425546, 33.756103 ], "pop" : 26649, "state" : "GA" }
+{ "_id" : "30315", "city" : "ATLANTA", "loc" : [ -84.380771, 33.705062 ], "pop" : 41061, "state" : "GA" }
+{ "_id" : "30316", "city" : "ATLANTA", "loc" : [ -84.333913, 33.721686 ], "pop" : 34668, "state" : "GA" }
+{ "_id" : "30317", "city" : "ATLANTA", "loc" : [ -84.31685, 33.749788 ], "pop" : 16395, "state" : "GA" }
+{ "_id" : "30318", "city" : "ATLANTA", "loc" : [ -84.445432, 33.786454 ], "pop" : 53894, "state" : "GA" }
+{ "_id" : "30319", "city" : "ATLANTA", "loc" : [ -84.335091, 33.868728 ], "pop" : 32138, "state" : "GA" }
+{ "_id" : "30324", "city" : "ATLANTA", "loc" : [ -84.354867, 33.820609 ], "pop" : 15044, "state" : "GA" }
+{ "_id" : "30326", "city" : "ATLANTA", "loc" : [ -84.358232, 33.848168 ], "pop" : 125, "state" : "GA" }
+{ "_id" : "30327", "city" : "ATLANTA", "loc" : [ -84.419966, 33.862723 ], "pop" : 18467, "state" : "GA" }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{ $match: {city:"ATLANTA"}},{$group:{ _id:"$city",  count: { $sum: 1 } }}])
+
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{ $match: {city:"ATLANTA"}},{$group:{ _id:"$city",  count: { $sum: 1 } }}])
+{ "_id" : "ATLANTA", "count" : 41 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{ $match: {city:"ATLANTA"}},{$group:{ _id:"$city",  population: {$sum:"$pop" }}}])
+{ "_id" : "ATLANTA", "population" : 630046 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{ $match: {city:"ATLANTA"}},{$group:{ _id:"$city",  population: {$sum:"$pop" }}}])
+{ "_id" : "ATLANTA", "population" : 630046 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{ _id:"$state",  population: {$sum:"$pop" }}}])
+{ "_id" : "TX", "population" : 16984601 }
+{ "_id" : "ID", "population" : 1006749 }
+{ "_id" : "NV", "population" : 1201833 }
+{ "_id" : "CO", "population" : 3293755 }
+{ "_id" : "UT", "population" : 1722850 }
+{ "_id" : "SD", "population" : 695397 }
+{ "_id" : "AZ", "population" : 3665228 }
+{ "_id" : "KY", "population" : 3675484 }
+{ "_id" : "DC", "population" : 606900 }
+{ "_id" : "MI", "population" : 9295297 }
+{ "_id" : "OK", "population" : 3145585 }
+{ "_id" : "CT", "population" : 3287116 }
+{ "_id" : "NY", "population" : 17990402 }
+{ "_id" : "WY", "population" : 453528 }
+{ "_id" : "IN", "population" : 5544136 }
+{ "_id" : "ME", "population" : 1226648 }
+{ "_id" : "ND", "population" : 638272 }
+{ "_id" : "MT", "population" : 798948 }
+{ "_id" : "GA", "population" : 6478216 }
+{ "_id" : "MO", "population" : 5110648 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{ _id:"$state",  population: {$sum:"$pop" }}},{$sort:-1}])
+uncaught exception: Error: command failed: {
+        "operationTime" : Timestamp(1625742429, 1),
+        "ok" : 0,
+        "errmsg" : "the $sort key specification must be an object",
+        "code" : 15973,
+        "codeName" : "Location15973",
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625742429, 1),
+                "signature" : {
+                        "hash" : BinData(0,"8NqoDiqp2BX1FGzwwHRmzB7yGzo="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        }
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:18:14
+_assertCommandWorked@src/mongo/shell/assert.js:639:17
+assert.commandWorked@src/mongo/shell/assert.js:729:16
+DB.prototype._runAggregate@src/mongo/shell/db.js:266:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1058:12
+@(shell):1:1
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{ _id:"$state",  population: {$sum:"$pop" }}},{$sort: {population: -1}}])
+{ "_id" : "CA", "population" : 29754890 }
+{ "_id" : "NY", "population" : 17990402 }
+{ "_id" : "TX", "population" : 16984601 }
+{ "_id" : "FL", "population" : 12686644 }
+{ "_id" : "PA", "population" : 11881643 }
+{ "_id" : "IL", "population" : 11427576 }
+{ "_id" : "OH", "population" : 10846517 }
+{ "_id" : "MI", "population" : 9295297 }
+{ "_id" : "NJ", "population" : 7730188 }
+{ "_id" : "NC", "population" : 6628637 }
+{ "_id" : "GA", "population" : 6478216 }
+{ "_id" : "VA", "population" : 6181479 }
+{ "_id" : "MA", "population" : 6016425 }
+{ "_id" : "IN", "population" : 5544136 }
+{ "_id" : "MO", "population" : 5110648 }
+{ "_id" : "WI", "population" : 4891769 }
+{ "_id" : "TN", "population" : 4876457 }
+{ "_id" : "WA", "population" : 4866692 }
+{ "_id" : "MD", "population" : 4781379 }
+{ "_id" : "MN", "population" : 4372982 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{ _id:"$state",  population: {$sum:"$pop" }}},{$sort: {population: -1}},{$limit: {population:3}}])
+uncaught exception: Error: command failed: {
+        "operationTime" : Timestamp(1625742565, 2),
+        "ok" : 0,
+        "errmsg" : "the limit must be specified as a number",
+        "code" : 15957,
+        "codeName" : "Location15957",
+        "$clusterTime" : {
+                "clusterTime" : Timestamp(1625742565, 2),
+                "signature" : {
+                        "hash" : BinData(0,"yqOYdAz0fvfJ80dud9WvBjOPm+o="),
+                        "keyId" : NumberLong("6930254109501030401")
+                }
+        }
+} : aggregate failed :
+_getErrorWithCode@src/mongo/shell/utils.js:25:13
+doassert@src/mongo/shell/assert.js:18:14
+_assertCommandWorked@src/mongo/shell/assert.js:639:17
+assert.commandWorked@src/mongo/shell/assert.js:729:16
+DB.prototype._runAggregate@src/mongo/shell/db.js:266:5
+DBCollection.prototype.aggregate@src/mongo/shell/collection.js:1058:12
+@(shell):1:1
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{ _id:"$state",  population: {$sum:"$pop" }}},{$sort: {population: -1}},{$limit: 3}])
+{ "_id" : "CA", "population" : 29754890 }
+{ "_id" : "NY", "population" : 17990402 }
+{ "_id" : "TX", "population" : 16984601 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY>
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { city:"$city",state:"$state"}} } ])
+{ "_id" : { "city" : "FORT COVINGTON", "state" : "NY" } }
+{ "_id" : { "city" : "MOUNT PLEASANT M", "state" : "PA" } }
+{ "_id" : { "city" : "BIG SPRING", "state" : "MD" } }
+{ "_id" : { "city" : "LAURA", "state" : "KY" } }
+{ "_id" : { "city" : "OTISVILLE", "state" : "MI" } }
+{ "_id" : { "city" : "WASHINGTON", "state" : "TX" } }
+{ "_id" : { "city" : "SHAW", "state" : "MS" } }
+{ "_id" : { "city" : "WALNUT SHADE", "state" : "MO" } }
+{ "_id" : { "city" : "DEARY", "state" : "ID" } }
+{ "_id" : { "city" : "GAULEY BRIDGE", "state" : "WV" } }
+{ "_id" : { "city" : "MONHEGAN", "state" : "ME" } }
+{ "_id" : { "city" : "HOMEWOOD", "state" : "IL" } }
+{ "_id" : { "city" : "MILFORD", "state" : "IL" } }
+{ "_id" : { "city" : "ROCKY COMFORT", "state" : "MO" } }
+{ "_id" : { "city" : "NORTH RICHLAND H", "state" : "TX" } }
+{ "_id" : { "city" : "MANSFIELD", "state" : "TX" } }
+{ "_id" : { "city" : "BRADLEY BEACH", "state" : "NJ" } }
+{ "_id" : { "city" : "ROGERSVILLE", "state" : "AL" } }
+{ "_id" : { "city" : "BANKSTON", "state" : "AL" } }
+{ "_id" : { "city" : "SINAI", "state" : "SD" } }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { city:"$city",state:"$state"},populationIs: { $sum:"$pop"}} } ])
+{ "_id" : { "city" : "ELDRED", "state" : "PA" }, "populationIs" : 2616 }
+{ "_id" : { "city" : "HOLYOKE", "state" : "MN" }, "populationIs" : 160 }
+{ "_id" : { "city" : "PALMYRA", "state" : "WI" }, "populationIs" : 2748 }
+{ "_id" : { "city" : "COALTON", "state" : "WV" }, "populationIs" : 1422 }
+{ "_id" : { "city" : "HARBINGER", "state" : "NC" }, "populationIs" : 189 }
+{ "_id" : { "city" : "LONE STAR", "state" : "SC" }, "populationIs" : 1030 }
+{ "_id" : { "city" : "PLATTSBURGH", "state" : "NY" }, "populationIs" : 40905 }
+{ "_id" : { "city" : "COPE", "state" : "CO" }, "populationIs" : 626 }
+{ "_id" : { "city" : "SEATTLE", "state" : "WA" }, "populationIs" : 520096 }
+{ "_id" : { "city" : "CUMMINGS", "state" : "KS" }, "populationIs" : 647 }
+{ "_id" : { "city" : "RICHMOND", "state" : "KY" }, "populationIs" : 37946 }
+{ "_id" : { "city" : "BERLIN", "state" : "MI" }, "populationIs" : 1333 }
+{ "_id" : { "city" : "DENISON", "state" : "IA" }, "populationIs" : 8507 }
+{ "_id" : { "city" : "BALDWIN CITY", "state" : "KS" }, "populationIs" : 6990 }
+{ "_id" : { "city" : "SPRING HILL", "state" : "TN" }, "populationIs" : 2891 }
+{ "_id" : { "city" : "ADAMSVILLE", "state" : "TN" }, "populationIs" : 3042 }
+{ "_id" : { "city" : "TRAER", "state" : "IA" }, "populationIs" : 2064 }
+{ "_id" : { "city" : "MOUNT SIDNEY", "state" : "VA" }, "populationIs" : 1787 }
+{ "_id" : { "city" : "MANITOWOC", "state" : "WI" }, "populationIs" : 39178 }
+{ "_id" : { "city" : "SIKES", "state" : "LA" }, "populationIs" : 579 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { city:"$city",state:"$state"},populationIs: { $sum:"$pop"}} } ,{$sort:{populationIs: -1}}])
+{ "_id" : { "city" : "CHICAGO", "state" : "IL" }, "populationIs" : 2452177 }
+{ "_id" : { "city" : "BROOKLYN", "state" : "NY" }, "populationIs" : 2300504 }
+{ "_id" : { "city" : "LOS ANGELES", "state" : "CA" }, "populationIs" : 2102295 }
+{ "_id" : { "city" : "HOUSTON", "state" : "TX" }, "populationIs" : 2095918 }
+{ "_id" : { "city" : "PHILADELPHIA", "state" : "PA" }, "populationIs" : 1610956 }
+{ "_id" : { "city" : "NEW YORK", "state" : "NY" }, "populationIs" : 1476790 }
+{ "_id" : { "city" : "BRONX", "state" : "NY" }, "populationIs" : 1209548 }
+{ "_id" : { "city" : "SAN DIEGO", "state" : "CA" }, "populationIs" : 1049298 }
+{ "_id" : { "city" : "DETROIT", "state" : "MI" }, "populationIs" : 963243 }
+{ "_id" : { "city" : "DALLAS", "state" : "TX" }, "populationIs" : 940191 }
+{ "_id" : { "city" : "PHOENIX", "state" : "AZ" }, "populationIs" : 890853 }
+{ "_id" : { "city" : "MIAMI", "state" : "FL" }, "populationIs" : 825232 }
+{ "_id" : { "city" : "SAN JOSE", "state" : "CA" }, "populationIs" : 816653 }
+{ "_id" : { "city" : "SAN ANTONIO", "state" : "TX" }, "populationIs" : 811792 }
+{ "_id" : { "city" : "BALTIMORE", "state" : "MD" }, "populationIs" : 733081 }
+{ "_id" : { "city" : "SAN FRANCISCO", "state" : "CA" }, "populationIs" : 723993 }
+{ "_id" : { "city" : "MEMPHIS", "state" : "TN" }, "populationIs" : 632837 }
+{ "_id" : { "city" : "SACRAMENTO", "state" : "CA" }, "populationIs" : 628279 }
+{ "_id" : { "city" : "JACKSONVILLE", "state" : "FL" }, "populationIs" : 610160 }
+{ "_id" : { "city" : "ATLANTA", "state" : "GA" }, "populationIs" : 609591 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { city:"$city",state:"$state"},populationIs: { $sum:"$pop"}} } ,{$sort:{populationIs: -1}},{$limit: 3}])
+{ "_id" : { "city" : "CHICAGO", "state" : "IL" }, "populationIs" : 2452177 }
+{ "_id" : { "city" : "BROOKLYN", "state" : "NY" }, "populationIs" : 2300504 }
+{ "_id" : { "city" : "LOS ANGELES", "state" : "CA" }, "populationIs" : 2102295 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { city:"$city",},populationIs: { $sum:"$pop"}} } ,{$sort:{populationIs: -1}},{$limit: 3}])
+{ "_id" : { "city" : "CHICAGO" }, "populationIs" : 2452177 }
+{ "_id" : { "city" : "BROOKLYN" }, "populationIs" : 2341387 }
+{ "_id" : { "city" : "HOUSTON" }, "populationIs" : 2123053 }
+
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([$match: {state:"TX"}])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:29
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$match: {state:"TX"}}])
+{ "_id" : "75002", "city" : "ALLEN", "loc" : [ -96.645433, 33.093383 ], "pop" : 24151, "state" : "TX" }
+{ "_id" : "75006", "city" : "CARROLLTON", "loc" : [ -96.882464, 32.965736 ], "pop" : 37699, "state" : "TX" }
+{ "_id" : "75007", "city" : "CARROLLTON", "loc" : [ -96.881988, 33.003294 ], "pop" : 54796, "state" : "TX" }
+{ "_id" : "75008", "city" : "CARROLLTON", "loc" : [ -96.923197, 33.03524 ], "pop" : 1482, "state" : "TX" }
+{ "_id" : "75009", "city" : "CELINA", "loc" : [ -96.767325, 33.310316 ], "pop" : 3373, "state" : "TX" }
+{ "_id" : "75010", "city" : "CARROLLTON", "loc" : [ -96.877746, 33.030414 ], "pop" : 4379, "state" : "TX" }
+{ "_id" : "75019", "city" : "COPPELL", "loc" : [ -96.980516, 32.96727 ], "pop" : 16862, "state" : "TX" }
+{ "_id" : "75020", "city" : "DENISON", "loc" : [ -96.549574, 33.745009 ], "pop" : 27172, "state" : "TX" }
+{ "_id" : "75023", "city" : "PLANO", "loc" : [ -96.736454, 33.054972 ], "pop" : 40832, "state" : "TX" }
+{ "_id" : "75024", "city" : "PLANO", "loc" : [ -96.784307, 33.075211 ], "pop" : 1439, "state" : "TX" }
+{ "_id" : "75025", "city" : "PLANO", "loc" : [ -96.729142, 33.078377 ], "pop" : 8562, "state" : "TX" }
+{ "_id" : "75028", "city" : "FLOWER MOUND", "loc" : [ -97.074501, 33.038268 ], "pop" : 16825, "state" : "TX" }
+{ "_id" : "75034", "city" : "FRISCO", "loc" : [ -96.824105, 33.149901 ], "pop" : 8045, "state" : "TX" }
+{ "_id" : "75038", "city" : "IRVING", "loc" : [ -96.990503, 32.865309 ], "pop" : 20152, "state" : "TX" }
+{ "_id" : "75039", "city" : "IRVING", "loc" : [ -96.938876, 32.869669 ], "pop" : 598, "state" : "TX" }
+{ "_id" : "75040", "city" : "GARLAND", "loc" : [ -96.624804, 32.922744 ], "pop" : 45359, "state" : "TX" }
+{ "_id" : "75041", "city" : "GARLAND", "loc" : [ -96.641115, 32.87937 ], "pop" : 26212, "state" : "TX" }
+{ "_id" : "75042", "city" : "GARLAND", "loc" : [ -96.677545, 32.918486 ], "pop" : 31807, "state" : "TX" }
+{ "_id" : "75043", "city" : "GARLAND", "loc" : [ -96.599882, 32.856502 ], "pop" : 46620, "state" : "TX" }
+{ "_id" : "75044", "city" : "GARLAND", "loc" : [ -96.665383, 32.952228 ], "pop" : 30455, "state" : "TX" }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$match: {state:"TX"}},{$sort:{pop: -1}}])
+{ "_id" : "78521", "city" : "BROWNSVILLE", "loc" : [ -97.461236, 25.922103 ], "pop" : 79463, "state" : "TX" }
+{ "_id" : "78572", "city" : "ALTON", "loc" : [ -98.342647, 26.24153 ], "pop" : 67604, "state" : "TX" }
+{ "_id" : "78207", "city" : "SAN ANTONIO", "loc" : [ -98.525967, 29.422855 ], "pop" : 58355, "state" : "TX" }
+{ "_id" : "78228", "city" : "SAN ANTONIO", "loc" : [ -98.569871, 29.458937 ], "pop" : 58136, "state" : "TX" }
+{ "_id" : "79907", "city" : "EL PASO", "loc" : [ -106.329281, 31.708908 ], "pop" : 58052, "state" : "TX" }
+{ "_id" : "75217", "city" : "DALLAS", "loc" : [ -96.675481, 32.724429 ], "pop" : 57605, "state" : "TX" }
+{ "_id" : "79924", "city" : "EL PASO", "loc" : [ -106.414857, 31.902098 ], "pop" : 57215, "state" : "TX" }
+{ "_id" : "77036", "city" : "HOUSTON", "loc" : [ -95.540464, 29.698447 ], "pop" : 55414, "state" : "TX" }
+{ "_id" : "75216", "city" : "DALLAS", "loc" : [ -96.795488, 32.708611 ], "pop" : 55166, "state" : "TX" }
+{ "_id" : "75228", "city" : "DALLAS", "loc" : [ -96.678378, 32.824997 ], "pop" : 55010, "state" : "TX" }
+{ "_id" : "75007", "city" : "CARROLLTON", "loc" : [ -96.881988, 33.003294 ], "pop" : 54796, "state" : "TX" }
+{ "_id" : "75211", "city" : "COCKRELL HILL", "loc" : [ -96.881797, 32.736928 ], "pop" : 54691, "state" : "TX" }
+{ "_id" : "78501", "city" : "MCALLEN", "loc" : [ -98.235871, 26.21544 ], "pop" : 53932, "state" : "TX" }
+{ "_id" : "75051", "city" : "GRAND PRAIRIE", "loc" : [ -97.006916, 32.711471 ], "pop" : 52779, "state" : "TX" }
+{ "_id" : "78539", "city" : "EDINBURG", "loc" : [ -98.156922, 26.304221 ], "pop" : 52534, "state" : "TX" }
+{ "_id" : "79936", "city" : "EL PASO", "loc" : [ -106.30159, 31.767655 ], "pop" : 52031, "state" : "TX" }
+{ "_id" : "75150", "city" : "MESQUITE", "loc" : [ -96.630681, 32.815416 ], "pop" : 51494, "state" : "TX" }
+{ "_id" : "77901", "city" : "VICTORIA", "loc" : [ -96.999347, 28.808953 ], "pop" : 50119, "state" : "TX" }
+{ "_id" : "78520", "city" : "BROWNSVILLE", "loc" : [ -97.517413, 25.933743 ], "pop" : 50091, "state" : "TX" }
+{ "_id" : "77340", "city" : "HUNTSVILLE", "loc" : [ -95.534186, 30.73435 ], "pop" : 48879, "state" : "TX" }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$match: {state:"TX"}},{$sort:{pop: -1}},{$limit:3}])
+{ "_id" : "78521", "city" : "BROWNSVILLE", "loc" : [ -97.461236, 25.922103 ], "pop" : 79463, "state" : "TX" }
+{ "_id" : "78572", "city" : "ALTON", "loc" : [ -98.342647, 26.24153 ], "pop" : 67604, "state" : "TX" }
+{ "_id" : "78207", "city" : "SAN ANTONIO", "loc" : [ -98.525967, 29.422855 ], "pop" : 58355, "state" : "TX" }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY>
+
