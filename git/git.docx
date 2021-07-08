@@ -1,0 +1,899 @@
+
+SECTION 0:
+     
+Section 1:
+
+smiraje@DIN59016392 MINGW64 ~
+$ cd Dektop
+bash: cd: Dektop: No such file or directory
+
+smiraje@DIN59016392 MINGW64 ~
+$ cd Desktop
+
+smiraje@DIN59016392 MINGW64 ~/Desktop
+$ mkdir assignment
+
+smiraje@DIN59016392 MINGW64 ~/Desktop
+$ cd assignmnet
+bash: cd: assignmnet: No such file or directory
+
+smiraje@DIN59016392 MINGW64 ~/Desktop
+$ cd assignment
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment
+$ touch README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment
+$ git add README.txt
+fatal: not a git repository (or any of the parent directories): .git
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment
+$ git init
+Initialized empty Git repository in C:/Users/SMIRAJE/Desktop/assignment/.git/
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git add README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git commit -m "initial commit of readme file"
+[master (root-commit) 39e6550] initial commit of readme file
+ 1 file changed, 7 insertions(+)
+ create mode 100644 README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branch html-assignment
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git checkout html-assignment
+Switched to branch 'html-assignment'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git status
+On branch html-assignment
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ touch html1.html
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ touch html2.html
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git add html1.html
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git add html2.html
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git status
+On branch html-assignment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   html1.html
+        new file:   html2.html
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git commit -m "initial commit for html1 and html2 file"
+[html-assignment 9ea473b] initial commit for html1 and html2 file
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 html1.html
+ create mode 100644 html2.html
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git status
+On branch html-assignment
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ vim html1.html
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git status
+On branch html-assignment
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   html1.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git add html1.html
+warning: LF will be replaced by CRLF in html1.html.
+The file will have its original line endings in your working directory
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git status
+On branch html-assignment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   html1.html
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git commit -m "changes made in html1 file"
+[html-assignment ab02523] changes made in html1 file
+ 1 file changed, 5 insertions(+)
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git status
+On branch html-assignment
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git checkout master
+Switched to branch 'master'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ vim README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git add README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.txt
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git commit -m "chnaged made in readme file"
+[master d6c245d] chnaged made in readme file
+ 1 file changed, 1 insertion(+)
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git checkout html-assignment
+Switched to branch 'html-assignment'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ vim html2.html
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git status
+On branch html-assignment
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   html2.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git add html2.html
+warning: LF will be replaced by CRLF in html2.html.
+The file will have its original line endings in your working directory
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git status
+On branch html-assignment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   html2.html
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git commit -m "change made in file html2"
+[html-assignment a7153b6] change made in file html2
+ 1 file changed, 5 insertions(+)
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git checkout master
+Switched to branch 'master'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log
+commit d6c245d51033bc38cbf2b1d22dc55e1c6dd7f46f (HEAD -> master)
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:34:58 2021 +0530
+
+    chnaged made in readme file
+
+commit 39e65501a29662932e1997575497d470cb58b616
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:00:56 2021 +0530
+
+    initial commit of readme file
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git --all --decorate --online --graph
+unknown option: --all
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log --all --decorate --online --graph
+fatal: unrecognized argument: --online
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log --all --decorate --oneline --graph
+* a7153b6 (html-assignment) change made in file html2
+* ab02523 changes made in html1 file
+* 9ea473b initial commit for html1 and html2 file
+| * d6c245d (HEAD -> master) chnaged made in readme file
+|/
+* 39e6550 initial commit of readme file
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git merge html-assignment
+Merge made by the 'recursive' strategy.
+ html1.html | 5 +++++
+ html2.html | 5 +++++
+ 2 files changed, 10 insertions(+)
+ create mode 100644 html1.html
+ create mode 100644 html2.html
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log
+commit b257bd9f35688979a0f042014eae408d75327c2b (HEAD -> master)
+Merge: d6c245d a7153b6
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:40:47 2021 +0530
+
+    Merge branch 'html-assignment'
+
+commit a7153b6f34c34d157785b23959b7a25b00ec9591 (html-assignment)
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:38:25 2021 +0530
+
+    change made in file html2
+
+commit d6c245d51033bc38cbf2b1d22dc55e1c6dd7f46f
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:34:58 2021 +0530
+
+    chnaged made in readme file
+
+commit ab02523f80898a68bc8495f806640c61964ec4c5
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:32:03 2021 +0530
+
+    changes made in html1 file
+
+commit 9ea473b83c990c5e3b88232ea4dfffab3612cc44
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:29:10 2021 +0530
+
+    initial commit for html1 and html2 file
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git checkout html-assignment
+Switched to branch 'html-assignment'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (html-assignment)
+$ git checkout master
+Switched to branch 'master'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branch --merged
+  html-assignment
+* master
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branch -d html-assignment
+Deleted branch html-assignment (was a7153b6).
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log
+commit b257bd9f35688979a0f042014eae408d75327c2b (HEAD -> master)
+Merge: d6c245d a7153b6
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:40:47 2021 +0530
+
+    Merge branch 'html-assignment'
+
+commit a7153b6f34c34d157785b23959b7a25b00ec9591
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:38:25 2021 +0530
+
+    change made in file html2
+
+commit d6c245d51033bc38cbf2b1d22dc55e1c6dd7f46f
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:34:58 2021 +0530
+
+    chnaged made in readme file
+
+commit ab02523f80898a68bc8495f806640c61964ec4c5
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:32:03 2021 +0530
+
+    changes made in html1 file
+
+commit 9ea473b83c990c5e3b88232ea4dfffab3612cc44
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 14:29:10 2021 +0530
+
+    initial commit for html1 and html2 file
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log --all --decorate --oneline --graph
+*   b257bd9 (HEAD -> master) Merge branch 'html-assignment'
+|\
+| * a7153b6 change made in file html2
+| * ab02523 changes made in html1 file
+| * 9ea473b initial commit for html1 and html2 file
+* | d6c245d chnaged made in readme file
+|/
+* 39e6550 initial commit of readme file
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$
+
+
+
+Section 2:
+
+smiraje@DIN59016392 MINGW64 ~/Desktop (master)
+$ cd assignment
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git branch
+* css-assignment
+  master
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ touch democss1.css
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ vim democss1.css
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git status
+On branch css-assignment
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        democss1.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git add democss1.css
+warning: LF will be replaced by CRLF in democss1.css.
+The file will have its original line endings in your working directory
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git status
+On branch css-assignment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   democss1.css
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git commit -m " intial commit of democss file"
+[css-assignment 210ffda]  intial commit of democss file
+ 1 file changed, 5 insertions(+)
+ create mode 100644 democss1.css
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git status
+On branch css-assignment
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ vim README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git add README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git commit -m "changes made at line number1 in readme file at cssassign branch"
+[css-assignment ab4864d] changes made at line number1 in readme file at cssassign branch
+ 1 file changed, 1 insertion(+)
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git stauts]
+git: 'stauts]' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git status
+On branch css-assignment
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git checkout master
+Switched to branch 'master'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ vim README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git add README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git commit -m "chnage made at line 3 in master branch"
+[master 416b4ce] chnage made at line 3 in master branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git checkout css-assignment
+Switched to branch 'css-assignment'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ vim democss1.css
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ touch democss2.css
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ vim democss2.css
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git status
+On branch css-assignment
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   democss1.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        democss2.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git add .
+warning: LF will be replaced by CRLF in democss2.css.
+The file will have its original line endings in your working directory
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git status
+On branch css-assignment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   democss1.css
+        new file:   democss2.css
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git commit -m "chnages made in democss1 and democss2 is created"
+[css-assignment 5f9fb59] chnages made in democss1 and democss2 is created
+ 2 files changed, 8 insertions(+)
+ create mode 100644 democss2.css
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (css-assignment)
+$ git checkout master
+Switched to branch 'master'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git merge css-assignment
+Auto-merging README.txt
+Merge made by the 'recursive' strategy.
+ README.txt   | 1 +
+ democss1.css | 9 +++++++++
+ democss2.css | 4 ++++
+ 3 files changed, 14 insertions(+)
+ create mode 100644 democss1.css
+ create mode 100644 democss2.css
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log
+commit 5e4d01cdd4d0fd7f8541f49fd4c2a3e6943d59a1 (HEAD -> master)
+Merge: 416b4ce 5f9fb59
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:12:39 2021 +0530
+
+    Merge branch 'css-assignment'
+
+commit 5f9fb5916365e3e3fbc78c630f49bc9fd6df6eda (css-assignment)
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:11:59 2021 +0530
+
+    chnages made in democss1 and democss2 is created
+
+commit 416b4ce764145d4443cdc1e30621aac62d9934ee
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:08:37 2021 +0530
+
+    chnage made at line 3 in master branch
+
+commit ab4864d147f897066de880240045dc95279235a7
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:05:54 2021 +0530
+
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branch
+  css-assignment
+* master
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git --merged
+unknown option: --merged
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branch --merged
+  css-assignment
+* master
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branch -d css-assignment
+Deleted branch css-assignment (was 5f9fb59).
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log
+commit 5e4d01cdd4d0fd7f8541f49fd4c2a3e6943d59a1 (HEAD -> master)
+Merge: 416b4ce 5f9fb59
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:12:39 2021 +0530
+
+    Merge branch 'css-assignment'
+
+commit 5f9fb5916365e3e3fbc78c630f49bc9fd6df6eda
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:11:59 2021 +0530
+
+    chnages made in democss1 and democss2 is created
+
+commit 416b4ce764145d4443cdc1e30621aac62d9934ee
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:08:37 2021 +0530
+
+    chnage made at line 3 in master branch
+
+commit ab4864d147f897066de880240045dc95279235a7
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:05:54 2021 +0530
+
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log --all --decorate --oneline --graph
+*   5e4d01c (HEAD -> master) Merge branch 'css-assignment'
+|\
+| * 5f9fb59 chnages made in democss1 and democss2 is created
+| * ab4864d changes made at line number1 in readme file at cssassign branch
+| * 210ffda  intial commit of democss file
+* | 416b4ce chnage made at line 3 in master branch
+|/
+*   b257bd9 Merge branch 'html-assignment'
+|\
+| * a7153b6 change made in file html2
+| * ab02523 changes made in html1 file
+| * 9ea473b initial commit for html1 and html2 file
+* | d6c245d chnaged made in readme file
+|/
+* 39e6550 initial commit of readme file
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$
+
+
+Section 3:
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branchjs-assignment
+git: 'branchjs-assignment' is not a git command. See 'git --help'.
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branch js-assignment
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git checkout js-assignment
+Switched to branch 'js-assignment'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ touch demojs.js
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ touch demojs1.js
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git add demojs.js
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git status
+On branch js-assignment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   demojs.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        demojs1.js
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git add demojs1.js
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git status
+On branch js-assignment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   demojs.js
+        new file:   demojs1.js
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git commit -m "Initial commit made on js files"
+[js-assignment 1829912] Initial commit made on js files
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 demojs.js
+ create mode 100644 demojs1.js
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git status
+On branch js-assignment
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ vim README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git status
+On branch js-assignment
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git add README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git commit -m "changes made in readme file at js assignment at line 1"
+[js-assignment 8fcfd7a] changes made in readme file at js assignment at line 1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git status
+On branch js-assignment
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git checkout master
+Switched to branch 'master'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ vim README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git add README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.txt
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git commit README.txt
+[master 714ec60] changes made at master branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log
+commit 714ec60bcb494df8f91241ce9f1939530b0abd38 (HEAD -> master)
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:27:18 2021 +0530
+
+    changes made at master branch
+
+commit 5e4d01cdd4d0fd7f8541f49fd4c2a3e6943d59a1
+Merge: 416b4ce 5f9fb59
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:12:39 2021 +0530
+
+    Merge branch 'css-assignment'
+
+commit 5f9fb5916365e3e3fbc78c630f49bc9fd6df6eda
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:11:59 2021 +0530
+
+    chnages made in democss1 and democss2 is created
+
+commit 416b4ce764145d4443cdc1e30621aac62d9934ee
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:08:37 2021 +0530
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git checkout js-assignment
+Switched to branch 'js-assignment'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ vim demojs.js
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git add demojs.js
+warning: LF will be replaced by CRLF in demojs.js.
+The file will have its original line endings in your working directory
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git status
+On branch js-assignment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   demojs.js
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git commit -m "changes made in demojs"
+[js-assignment 37150c0] changes made in demojs
+ 1 file changed, 1 insertion(+)
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git status
+On branch js-assignment
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (js-assignment)
+$ git checkout master
+Switched to branch 'master'
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git merge js-assignment
+Auto-merging README.txt
+CONFLICT (content): Merge conflict in README.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master|MERGING)
+$ vim README.txt
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master|MERGING)
+$ git commit README.txt
+fatal: cannot do a partial commit during a merge.
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master|MERGING)
+$ git commit -am "conflict is resolved"
+[master f9c748c] conflict is resolved
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log
+commit f9c748c6054c37dc3b749ce71743869fda366356 (HEAD -> master)
+Merge: 714ec60 37150c0
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:47:23 2021 +0530
+
+    conflict is resolved
+
+commit 37150c0bde75a5c5ce78b332b22316757a3f4620 (js-assignment)
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:32:10 2021 +0530
+
+    changes made in demojs
+
+commit 714ec60bcb494df8f91241ce9f1939530b0abd38
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:27:18 2021 +0530
+
+    changes made at master branch
+
+commit 8fcfd7a01c5fa47d351463881d2c945e25e4b403
+Author: snehal <snehalmiraje5313@gmail.com>
+Date:   Tue Jul 6 15:23:06 2021 +0530
+
+
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branch --merged
+  js-assignment
+* master
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git branch -d js-assignment
+Deleted branch js-assignment (was 37150c0).
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log --all --decorate --online --graph
+fatal: unrecognized argument: --online
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$ git log --all --decorate --oneline --graph
+*   f9c748c (HEAD -> master) conflict is resolved
+|\
+| * 37150c0 changes made in demojs
+| * 8fcfd7a changes made in readme file at js assignment at line 1
+| * 1829912 Initial commit made on js files
+* | 714ec60 changes made at master branch
+|/
+*   5e4d01c Merge branch 'css-assignment'
+|\
+| * 5f9fb59 chnages made in democss1 and democss2 is created
+| * ab4864d changes made at line number1 in readme file at cssassign branch
+| * 210ffda  intial commit of democss file
+* | 416b4ce chnage made at line 3 in master branch
+|/
+*   b257bd9 Merge branch 'html-assignment'
+|\
+| * a7153b6 change made in file html2
+| * ab02523 changes made in html1 file
+| * 9ea473b initial commit for html1 and html2 file
+* | d6c245d chnaged made in readme file
+|/
+* 39e6550 initial commit of readme file
+
+smiraje@DIN59016392 MINGW64 ~/Desktop/assignment (master)
+$
+
+
+
+
+
+
+
+Git remoting
+ 
