@@ -1207,3 +1207,190 @@ MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$match:
 { "_id" : "78207", "city" : "SAN ANTONIO", "loc" : [ -98.525967, 29.422855 ], "pop" : 58355, "state" : "TX" }
 MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY>
 
+
+**Bonus**
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { city:"$city",state:"$state"}}}])
+{ "_id" : { "city" : "ADAMS", "state" : "ND" } }
+{ "_id" : { "city" : "WILLOW SPRINGS", "state" : "CA" } }
+{ "_id" : { "city" : "SAINT CHARLES", "state" : "ID" } }
+{ "_id" : { "city" : "ARIEL", "state" : "WA" } }
+{ "_id" : { "city" : "WEST ALLIS", "state" : "WI" } }
+{ "_id" : { "city" : "TREXLERTOWN", "state" : "PA" } }
+{ "_id" : { "city" : "KENT", "state" : "OH" } }
+{ "_id" : { "city" : "CHEROKEE FALLS", "state" : "SC" } }
+{ "_id" : { "city" : "NEOPIT", "state" : "WI" } }
+{ "_id" : { "city" : "GAINESVILLE", "state" : "AL" } }
+{ "_id" : { "city" : "STEWARTSVILLE", "state" : "NJ" } }
+{ "_id" : { "city" : "EDWARDS", "state" : "MO" } }
+{ "_id" : { "city" : "FARISTA", "state" : "CO" } }
+{ "_id" : { "city" : "GUNNISON", "state" : "UT" } }
+{ "_id" : { "city" : "JONES MILLS", "state" : "AR" } }
+{ "_id" : { "city" : "MAHNOMEN", "state" : "MN" } }
+{ "_id" : { "city" : "MILTON", "state" : "MA" } }
+{ "_id" : { "city" : "CADOGAN", "state" : "PA" } }
+{ "_id" : { "city" : "LENOX", "state" : "KY" } }
+{ "_id" : { "city" : "LEXINGTON", "state" : "MI" } }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { state:"$state"}}}])
+{ "_id" : { "state" : "NH" } }
+{ "_id" : { "state" : "FL" } }
+{ "_id" : { "state" : "ME" } }
+{ "_id" : { "state" : "IN" } }
+{ "_id" : { "state" : "CT" } }
+{ "_id" : { "state" : "ND" } }
+{ "_id" : { "state" : "MT" } }
+{ "_id" : { "state" : "NY" } }
+{ "_id" : { "state" : "MO" } }
+{ "_id" : { "state" : "NJ" } }
+{ "_id" : { "state" : "AL" } }
+{ "_id" : { "state" : "MD" } }
+{ "_id" : { "state" : "KS" } }
+{ "_id" : { "state" : "GA" } }
+{ "_id" : { "state" : "NE" } }
+{ "_id" : { "state" : "LA" } }
+{ "_id" : { "state" : "AR" } }
+{ "_id" : { "state" : "WY" } }
+{ "_id" : { "state" : "NM" } }
+{ "_id" : { "state" : "CO" } }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { city:"$city",state:"$state"},populationIs: { $sum:"$pop"}} } ])
+{ "_id" : { "city" : "MOSELEY", "state" : "VA" }, "populationIs" : 1852 }
+{ "_id" : { "city" : "DAVID", "state" : "KY" }, "populationIs" : 60 }
+{ "_id" : { "city" : "WITT", "state" : "IL" }, "populationIs" : 1251 }
+{ "_id" : { "city" : "SUNOL", "state" : "CA" }, "populationIs" : 953 }
+{ "_id" : { "city" : "AVONDALE ESTATES", "state" : "GA" }, "populationIs" : 4459 }
+{ "_id" : { "city" : "PERU", "state" : "ME" }, "populationIs" : 1541 }
+{ "_id" : { "city" : "BLANCHARD", "state" : "IA" }, "populationIs" : 284 }
+{ "_id" : { "city" : "LINCOLN", "state" : "IL" }, "populationIs" : 20130 }
+{ "_id" : { "city" : "BAY SPRINGS", "state" : "MS" }, "populationIs" : 6778 }
+{ "_id" : { "city" : "LAKE SHERWOOD", "state" : "MO" }, "populationIs" : 3690 }
+{ "_id" : { "city" : "BASALT", "state" : "CO" }, "populationIs" : 3248 }
+{ "_id" : { "city" : "GREENLEAF", "state" : "OR" }, "populationIs" : 492 }
+{ "_id" : { "city" : "HERRICK", "state" : "SD" }, "populationIs" : 337 }
+{ "_id" : { "city" : "STRAFFORD", "state" : "NH" }, "populationIs" : 1618 }
+{ "_id" : { "city" : "DEER PARK", "state" : "NY" }, "populationIs" : 32146 }
+{ "_id" : { "city" : "NORTH DARTMOUTH", "state" : "MA" }, "populationIs" : 16383 }
+{ "_id" : { "city" : "PRENTISS", "state" : "MS" }, "populationIs" : 9065 }
+{ "_id" : { "city" : "AMHERST", "state" : "WI" }, "populationIs" : 2885 }
+{ "_id" : { "city" : "BERNVILLE", "state" : "PA" }, "populationIs" : 6245 }
+{ "_id" : { "city" : "BARNARD", "state" : "SD" }, "populationIs" : 172 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { state:"$state"},populationIs: { $sum:"$pop"}} } ])
+{ "_id" : { "state" : "MD" }, "populationIs" : 4781379 }
+{ "_id" : { "state" : "AL" }, "populationIs" : 4040587 }
+{ "_id" : { "state" : "NJ" }, "populationIs" : 7730188 }
+{ "_id" : { "state" : "NC" }, "populationIs" : 6628637 }
+{ "_id" : { "state" : "KS" }, "populationIs" : 2475285 }
+{ "_id" : { "state" : "CA" }, "populationIs" : 29754890 }
+{ "_id" : { "state" : "GA" }, "populationIs" : 6478216 }
+{ "_id" : { "state" : "HI" }, "populationIs" : 1108229 }
+{ "_id" : { "state" : "MT" }, "populationIs" : 798948 }
+{ "_id" : { "state" : "WA" }, "populationIs" : 4866692 }
+{ "_id" : { "state" : "ME" }, "populationIs" : 1226648 }
+{ "_id" : { "state" : "IN" }, "populationIs" : 5544136 }
+{ "_id" : { "state" : "NY" }, "populationIs" : 17990402 }
+{ "_id" : { "state" : "ND" }, "populationIs" : 638272 }
+{ "_id" : { "state" : "MO" }, "populationIs" : 5110648 }
+{ "_id" : { "state" : "CT" }, "populationIs" : 3287116 }
+{ "_id" : { "state" : "NE" }, "populationIs" : 1578139 }
+{ "_id" : { "state" : "WY" }, "populationIs" : 453528 }
+{ "_id" : { "state" : "AK" }, "populationIs" : 544698 }
+{ "_id" : { "state" : "MI" }, "populationIs" : 9295297 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { state:"$state"},populationIs: { $avg:"$pop"}} } ])
+{ "_id" : { "state" : "UT" }, "populationIs" : 8404.146341463415 }
+{ "_id" : { "state" : "TN" }, "populationIs" : 8378.792096219931 }
+{ "_id" : { "state" : "AZ" }, "populationIs" : 13574.918518518518 }
+{ "_id" : { "state" : "IL" }, "populationIs" : 9238.137429264349 }
+{ "_id" : { "state" : "DE" }, "populationIs" : 12569.207547169812 }
+{ "_id" : { "state" : "MS" }, "populationIs" : 7088.749311294766 }
+{ "_id" : { "state" : "WI" }, "populationIs" : 6832.079608938548 }
+{ "_id" : { "state" : "TX" }, "populationIs" : 10164.333333333334 }
+{ "_id" : { "state" : "ID" }, "populationIs" : 4126.020491803279 }
+{ "_id" : { "state" : "IA" }, "populationIs" : 3011.301518438178 }
+{ "_id" : { "state" : "WV" }, "populationIs" : 2733.454268292683 }
+{ "_id" : { "state" : "MA" }, "populationIs" : 12692.879746835442 }
+{ "_id" : { "state" : "RI" }, "populationIs" : 14539.391304347826 }
+{ "_id" : { "state" : "NH" }, "populationIs" : 5088.311926605505 }
+{ "_id" : { "state" : "VA" }, "populationIs" : 7575.341911764706 }
+{ "_id" : { "state" : "FL" }, "populationIs" : 15779.407960199005 }
+{ "_id" : { "state" : "SC" }, "populationIs" : 9962.00857142857 }
+{ "_id" : { "state" : "MN" }, "populationIs" : 4958.02947845805 }
+{ "_id" : { "state" : "PA" }, "populationIs" : 8149.275034293552 }
+{ "_id" : { "state" : "VT" }, "populationIs" : 2315.8765432098767 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { state:"$state"},avgpopulationIs: { $avg:"$pop"}} } ])
+{ "_id" : { "state" : "MT" }, "avgpopulationIs" : 2544.420382165605 }
+{ "_id" : { "state" : "RI" }, "avgpopulationIs" : 14539.391304347826 }
+{ "_id" : { "state" : "NH" }, "avgpopulationIs" : 5088.311926605505 }
+{ "_id" : { "state" : "VA" }, "avgpopulationIs" : 7575.341911764706 }
+{ "_id" : { "state" : "SC" }, "avgpopulationIs" : 9962.00857142857 }
+{ "_id" : { "state" : "FL" }, "avgpopulationIs" : 15779.407960199005 }
+{ "_id" : { "state" : "MN" }, "avgpopulationIs" : 4958.02947845805 }
+{ "_id" : { "state" : "PA" }, "avgpopulationIs" : 8149.275034293552 }
+{ "_id" : { "state" : "OH" }, "avgpopulationIs" : 10771.119165839125 }
+{ "_id" : { "state" : "VT" }, "avgpopulationIs" : 2315.8765432098767 }
+{ "_id" : { "state" : "NC" }, "avgpopulationIs" : 9402.321985815603 }
+{ "_id" : { "state" : "MO" }, "avgpopulationIs" : 5141.496981891348 }
+{ "_id" : { "state" : "NE" }, "avgpopulationIs" : 2749.3710801393727 }
+{ "_id" : { "state" : "LA" }, "avgpopulationIs" : 9089.644396551725 }
+{ "_id" : { "state" : "AR" }, "avgpopulationIs" : 4066.998269896194 }
+{ "_id" : { "state" : "NM" }, "avgpopulationIs" : 5489.380434782609 }
+{ "_id" : { "state" : "HI" }, "avgpopulationIs" : 13852.8625 }
+{ "_id" : { "state" : "TN" }, "avgpopulationIs" : 8378.792096219931 }
+{ "_id" : { "state" : "OR" }, "avgpopulationIs" : 7401.877604166667 }
+{ "_id" : { "state" : "IL" }, "avgpopulationIs" : 9238.137429264349 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { state:"$state"},avgpopulationIs: { $avg:"$pop"}} },{$sort: {avgpopulation:-1}},{$limit:3} ])
+{ "_id" : { "state" : "OH" }, "avgpopulationIs" : 10771.119165839125 }
+{ "_id" : { "state" : "NY" }, "avgpopulationIs" : 11279.248902821317 }
+{ "_id" : { "state" : "LA" }, "avgpopulationIs" : 9089.644396551725 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { state:"$state"},avgpopulationIs: { $avg:"$pop"}} },{$sort: {avgpopulation:-1}} ])
+{ "_id" : { "state" : "WI" }, "avgpopulationIs" : 6832.079608938548 }
+{ "_id" : { "state" : "MS" }, "avgpopulationIs" : 7088.749311294766 }
+{ "_id" : { "state" : "TX" }, "avgpopulationIs" : 10164.333333333334 }
+{ "_id" : { "state" : "ID" }, "avgpopulationIs" : 4126.020491803279 }
+{ "_id" : { "state" : "CO" }, "avgpopulationIs" : 7955.929951690821 }
+{ "_id" : { "state" : "UT" }, "avgpopulationIs" : 8404.146341463415 }
+{ "_id" : { "state" : "AZ" }, "avgpopulationIs" : 13574.918518518518 }
+{ "_id" : { "state" : "NV" }, "avgpopulationIs" : 11556.086538461539 }
+{ "_id" : { "state" : "KY" }, "avgpopulationIs" : 4543.243510506799 }
+{ "_id" : { "state" : "DC" }, "avgpopulationIs" : 25287.5 }
+{ "_id" : { "state" : "SD" }, "avgpopulationIs" : 1810.9296875 }
+{ "_id" : { "state" : "MI" }, "avgpopulationIs" : 10611.069634703197 }
+{ "_id" : { "state" : "NY" }, "avgpopulationIs" : 11279.248902821317 }
+{ "_id" : { "state" : "OK" }, "avgpopulationIs" : 5367.892491467577 }
+{ "_id" : { "state" : "CT" }, "avgpopulationIs" : 12498.539923954373 }
+{ "_id" : { "state" : "MT" }, "avgpopulationIs" : 2544.420382165605 }
+{ "_id" : { "state" : "WY" }, "avgpopulationIs" : 3239.4857142857145 }
+{ "_id" : { "state" : "ME" }, "avgpopulationIs" : 2991.8243902439026 }
+{ "_id" : { "state" : "IN" }, "avgpopulationIs" : 8201.384615384615 }
+{ "_id" : { "state" : "ND" }, "avgpopulationIs" : 1632.4092071611253 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { state:"$state"},avgpopulationIs: { $avg:"$pop"}} },{$sort: {avgpopulationIs:-1}} ])
+{ "_id" : { "state" : "DC" }, "avgpopulationIs" : 25287.5 }
+{ "_id" : { "state" : "CA" }, "avgpopulationIs" : 19627.236147757256 }
+{ "_id" : { "state" : "FL" }, "avgpopulationIs" : 15779.407960199005 }
+{ "_id" : { "state" : "RI" }, "avgpopulationIs" : 14539.391304347826 }
+{ "_id" : { "state" : "NJ" }, "avgpopulationIs" : 14315.162962962962 }
+{ "_id" : { "state" : "HI" }, "avgpopulationIs" : 13852.8625 }
+{ "_id" : { "state" : "AZ" }, "avgpopulationIs" : 13574.918518518518 }
+{ "_id" : { "state" : "MA" }, "avgpopulationIs" : 12692.879746835442 }
+{ "_id" : { "state" : "DE" }, "avgpopulationIs" : 12569.207547169812 }
+{ "_id" : { "state" : "CT" }, "avgpopulationIs" : 12498.539923954373 }
+{ "_id" : { "state" : "NV" }, "avgpopulationIs" : 11556.086538461539 }
+{ "_id" : { "state" : "MD" }, "avgpopulationIs" : 11384.235714285714 }
+{ "_id" : { "state" : "NY" }, "avgpopulationIs" : 11279.248902821317 }
+{ "_id" : { "state" : "OH" }, "avgpopulationIs" : 10771.119165839125 }
+{ "_id" : { "state" : "MI" }, "avgpopulationIs" : 10611.069634703197 }
+{ "_id" : { "state" : "GA" }, "avgpopulationIs" : 10201.914960629922 }
+{ "_id" : { "state" : "TX" }, "avgpopulationIs" : 10164.333333333334 }
+{ "_id" : { "state" : "WA" }, "avgpopulationIs" : 10055.148760330578 }
+{ "_id" : { "state" : "SC" }, "avgpopulationIs" : 9962.00857142857 }
+{ "_id" : { "state" : "NC" }, "avgpopulationIs" : 9402.321985815603 }
+Type "it" for more
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY> db.zipcodes.aggregate([{$group:{_id: { state:"$state"},avgpopulationIs: { $avg:"$pop"}} },{$sort: {avgpopulationIs:-1}},{$limit:3} ])
+{ "_id" : { "state" : "DC" }, "avgpopulationIs" : 25287.5 }
+{ "_id" : { "state" : "CA" }, "avgpopulationIs" : 19627.236147757256 }
+{ "_id" : { "state" : "FL" }, "avgpopulationIs" : 15779.407960199005 }
+MongoDB Enterprise atlas-120tiv-shard-0:PRIMARY>
