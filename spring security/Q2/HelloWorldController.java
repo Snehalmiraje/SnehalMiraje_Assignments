@@ -10,4 +10,16 @@ public class HelloWorldController {
 	public String demo() {
 		return "Hellooo All...!";
 	}
+	@GetMapping("/user")
+	public String user() {
+		return "Hello User...!";
+		
+	}
+
+	
+	@GetMapping("/admin")
+	public String admin() {
+		return "Hello Admin...!";
+		
+	}
 }
