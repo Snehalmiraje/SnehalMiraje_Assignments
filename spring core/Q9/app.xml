@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+ 
+        
+	<bean id="Address" class="com.example.springassignment.Address">
+	<constructor-arg value="sangli road1"></constructor-arg>
+	<constructor-arg value="ichalakarnji1"></constructor-arg>
+	<constructor-arg value="maharashatra1"></constructor-arg>
+	<constructor-arg value=",1234561"></constructor-arg>
+	<constructor-arg value="India1"></constructor-arg>
+	
+	</bean>
+    <bean id="customer" class="com.example.springassignment.customer">
+    <constructor-arg ref="Address"/>
+    </bean>
+    
+	<bean id="Question" class=" com.example.springassignmentQ2.Question">
+		<constructor-arg value="Q1"></constructor-arg>
+		<constructor-arg value="what are your hobbies?"></constructor-arg>
+		<constructor-arg >
+		<list>  
+		<value>List:Dancing</value>  
+		<value>List:Reading</value>  
+		</list>  
+		</constructor-arg>
+	</bean>
+	
+	
+	<bean id="Question1" class=" com.example.springassignmentQ2.QuestionSet">
+		<constructor-arg value="Q1"></constructor-arg>
+		<constructor-arg value="what are your hobbies?"></constructor-arg>
+		<constructor-arg >
+		<set>  
+		<value>set:Dancing</value>  
+		<value>set:Reading</value>  
+		</set>  
+		</constructor-arg>
+	</bean>
+	
+	<bean id="Question2" class=" com.example.springassignmentQ2.Questionmap">
+		<constructor-arg value="Q1"></constructor-arg>
+		<constructor-arg value="what are your hobbies?"></constructor-arg>
+		<constructor-arg >
+		<map> 
+		<entry key="1" value="Dancing"></entry>  
+		<entry key="2" value="Reading"></entry>  	 
+		
+		</map>  
+		</constructor-arg>
+	</bean>
+	<bean id="demo" class="com.example.springassignmentQ8.demoInisDis">
+        <property name="msg" value="heyyyy this is property msg" />
+      </bean>
+      
+      <bean id="demo1" class="com.example.springassignmentQ8.initdcleanxml" 
+        init-method="init" destroy-method="cleanup">
+   		
+        <property name="msg" value="heyyyy.....property message using xml" />
+        
+    </bean>
+    <bean id="cust" class="com.example.springassignmentQ10.customer">
+	<constructor-arg value="snehal miraje"></constructor-arg>
+	<constructor-arg value="ichalakarnji"></constructor-arg>
+	</bean>
+	<bean id="app" class="com.example.springassignmentQ10.applicationContextAwareTest"/>
+</beans>
