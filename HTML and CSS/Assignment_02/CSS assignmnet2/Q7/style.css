@@ -1,0 +1,12 @@
+
+p{
+    margin: 0;padding: 0;
+    border-style:solid;
+    display: inline-block;
+   border-width: 1px;
+   border-color:indianred;
+}
+div{ border-style:dotted;
+    display: inline-block;
+   border-width: 1px;
+   border-color: green;}

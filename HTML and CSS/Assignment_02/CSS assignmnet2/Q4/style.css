@@ -1,0 +1,11 @@
+body{
+    background-color: skyblue;
+}
+a:link{
+    color: red;
+    text-decoration: underline;
+}
+a:visited{
+    color:blue;
+    text-decoration: underline;
+}

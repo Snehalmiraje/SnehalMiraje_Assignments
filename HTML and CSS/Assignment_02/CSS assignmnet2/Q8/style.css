@@ -1,0 +1,21 @@
+body{
+    font-family: monospace;
+}
+.a{
+    border-style: solid;
+    border-width: 5px;
+    background-color: lightblue;
+}
+.b{
+    border-style: solid;
+    border-width: 3px;
+    background-color: lightblue;
+}
+.c{
+    border-style: solid;
+    border-width: 1px;
+    background-color: lightblue;
+}
+.d{
+    background-color: lightblue;
+}
