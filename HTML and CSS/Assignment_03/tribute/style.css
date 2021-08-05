@@ -1,0 +1,41 @@
+.a{
+    font-size: 2.5rem;
+    font-weight: lighter;
+    margin-bottom: 0;
+}
+img{
+    border-radius: 50px;
+    display: block;
+    width: 20%;
+    margin: 40px auto;
+}
+.title
+{
+    color:rgb(87, 85, 85);
+    font-family:sans-serif;
+    text-align: center;
+}
+.title p{
+    margin: 0;
+}
+h4
+{
+    color: rgb(48, 48, 48);
+    line-height: 1.5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.content{
+    margin: 15px 18%;
+    padding: 5px 2%;
+    font-size: 1.2rem;
+    border:1px solid rgb(236, 236, 236);
+}
+.content p::first-letter
+{
+    font-size:2rem;
+    font-weight: bold;
+}
+.f{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+}
