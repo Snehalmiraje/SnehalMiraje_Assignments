@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q7A3</title>
+</head>
+<body>
+    
+    <script>
+        str='{"firstname":"snehal","lastname":"miraje","middlename":"chidanand"}';
+        var  obj=JSON.parse(str);
+        console.log("converted a string into object by using json");
+        console.log("firstname:",obj.firstname)
+        console.log("middlename",obj.middlename);
+        console.log("lastname:",obj.lastname);
+        //printing address which is not yet property of obj;
+        console.log(obj.address);
+        // assigning value to address;
+        obj.address="kolhapur";
+        console.log(obj.address);
+        // string is not modified
+        console.log(str);
+        //odject is modified:
+        console.log(obj);
+        obj.firstname="sachin";
+        console.log(obj);
+
+        
+    </script>
+</body>
+</html>

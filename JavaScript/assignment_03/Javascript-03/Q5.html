@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5A3</title>
+</head>
+<body>
+    <script>
+        //Creating the object without making a class and modifing the properties;
+        var person =new Object();
+        person.firstname="Snehal";
+        person.lastname="miraje";
+        //Before modify
+        console.log("First name of person class is:",person.firstname);
+        console.log("First name of person class is:",person.lastname);
+        person.firstname="modifed-Snehal";
+        person.lastname="modified-miraje";
+        //after modify
+        console.log("First name of person class is:",person.firstname);
+        console.log("First name of person class is:",person.lastname);
+
+        //reading the property middle name:
+        console.log("Middle name is:",person.middleName);
+
+        //assignig the value to middle name:
+        person.middleName="Chidanand";
+        console.log("After assigning Middle name is:",person.middleName);
+
+    </script>
+</body>
+</html>
