@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        class bankAccount{
+
+            constructor(accountnumber,accountHolderName,accountBalance)
+            {
+                this.accountnumber=accountnumber;
+                this.accountHolderName=accountHolderName;
+                this.accountBalance=accountBalance;
+            }
+         
+              
+          withdraw(amt){
+                if(this.accountBalance>0)
+               this. accountBalance=this.accountBalance-amt;
+
+            }
+            getBalance(){
+                return this.accountBalance;
+            }
+
+        }
+        class savings extends bankAccount{
+            constructor(accountnumber,accountHolderName,accountBalance,isSalary){
+                super(accountnumber,accountHolderName,accountBalance);
+                this.isSalary=isSalary;
+            }
+            
+        }
+        class current extends bankAccount{
+            constructor(accountnumber,accountHolderName,accountBalance,odlimit){
+                super(accountnumber,accountHolderName,accountBalance);
+                this.odlimit=odlimit;
+            }
+            
+        }
+        let s=new savings(101,"snehal",200000,true);
+        let c= new current(102,"sachin",30000,2000);
+        s.withdraw(20000);
+       console.log( s.getBalance());
+       if(c.getBalance>=c.odlimit)
+      {
+        c.withdraw(3000);
+       console.log(c.getBalance);
+      }
+      else{
+          console.log("Not possible..!")
+      }
+    </Script>
+</body>
+</html>
