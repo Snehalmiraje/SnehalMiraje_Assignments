@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1</title>
+</head>
+<body>
+    <script>
+        function Person(fname,lname,age,skill,dob,address,married,profation){
+                this.fname=fname;
+                this.lname=lname;
+                this.age=age;
+                this.skill=skill;
+                this.address=address;
+                this.dob=dob;
+                this.married=married;
+                this.profation=profation;
+        }
+        amithab=new Person("amithab","bachan",22,"24/10/1996",["c"],{city:"hydrabad",pincode:"521185"},"false","jr analyst");
+        abhishek=new Person("abhishek",21,"HTML","08/06/1997","false","jr analyst");
+        var abhishek=Object.create(amithab);
+        aaradhy=new Person("aaradhy","bachan");
+        var aaradhy=Object.create(abhishek);
+        print=function(){
+            console.log(amithab);
+            console.log(abhishek.lname);
+            console.log(aaradhy.lname);
+        }();
+
+    </script>
+</body>
+</html>

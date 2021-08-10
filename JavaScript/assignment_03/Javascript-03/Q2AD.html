@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1</title>
+</head>
+<body>
+    <script>
+   function Person(fname,lname,age,skill,dob,address,married,profation){
+                this.fname=fname;
+                this.lname=lname;
+                this.age=age;
+                this.skill=skill;
+                this.dob=dob;
+                this.address=address;
+                this.married=married;
+                this.profation=profation;
+        }
+        amithab=new Person("amithab","bachan",22,["c"],"24/10/1996",{city:"hydrabad",pincode:"521185"},"false","sr analyst");
+        
+    //abhishek=new Person("abhishek",21,"HTML","08/06/1997","false","jr analyst");
+        //use common properties of amithab instead of creating in abhishhek using contructor method
+       
+        var abhishek=Object.assign(amithab);
+        abhishek.fname="abhishek";
+        abhishek.age=21;
+        abhishek.skill=["HTML"];
+        abhishek.dob="08/06/1997";
+        abhishek.married="false";
+        abhishek.profation="jr analyst";
+        print=function(){
+            console.log(amithab);
+            console.log(abhishek.lname);
+            console.log(abhishek.address);
+            
+        }();
+
+    </script>
+</body>
+</html>
